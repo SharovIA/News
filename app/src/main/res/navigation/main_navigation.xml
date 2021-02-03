@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/listNewsFragment">
+
+    <fragment
+        android:id="@+id/listNewsFragment"
+        android:name="com.ivanasharov.news.views.ListNewsFragment"
+        android:label="@string/list_news" >
+        <action
+            android:id="@+id/action_listNewsFragment_to_showNewsFragment"
+            app:destination="@id/showNewsFragment">
+            <argument
+                android:name="newsViewModel"
+                app:argType="com.ivanasharov.news.models.NewsViewModel" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/showNewsFragment"
+        android:name="com.ivanasharov.news.views.ShowNewsFragment"
+        android:label="@string/show_news">
+        <argument
+            android:name="newsViewModel"
+            app:argType="com.ivanasharov.news.models.NewsViewModel" />
+    </fragment>
+</navigation>
